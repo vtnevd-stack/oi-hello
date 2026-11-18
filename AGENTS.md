@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Auth: Cloud email/password; private pages live under `src/routes/_authenticated/` (client-only gate redirects to `/auth?redirect=`); validation schemas, Portuguese error mapping and redirect sanitizing live in `src/lib/auth.ts` so every form shares them.
+- User display names live in `public.profiles` (created by a signup trigger from `full_name` metadata); never store roles there.
